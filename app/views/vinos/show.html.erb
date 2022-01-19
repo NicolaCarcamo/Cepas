@@ -5,5 +5,19 @@
   <%= @vino.name %>
 </p>
 
+<ul>
+  <% @vino.vino_cepas.each do |vino_cepas| %>
+    <li>
+      <%= vino_cepas.cepa.name %>
+      <% if vino_cepas.porcentaje.nil? %>
+        <strong>Sin porcentaje de cepa</strong>
+        <%= render partial: 'form_porcentaje', locals: {vino_cepas: vino_cepas} %>
+      <% else %>
+        <%= vino_cepas.porcentaje.to_s.concat("%") %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_vino_path(@vino) %> |
 <%= link_to 'Back', vinos_path %>

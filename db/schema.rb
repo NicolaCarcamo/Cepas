@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_05_010534) do
+ActiveRecord::Schema.define(version: 2022_01_18_235525) do
 
   create_table "cepas", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2022_01_05_010534) do
     t.integer "vino_id", null: false
     t.integer "cepa_id", null: false
     t.boolean "available", default: true
+    t.float "porcentaje"
   end
 
   create_table "vinos", force: :cascade do |t|

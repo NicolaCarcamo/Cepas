@@ -1,0 +1,10 @@
+<%= form_with(url: vc_add_porcentaje_path(vino_cepas), method: :put) do |f|%>
+    <div class="field">
+        <%= f.label'porcentaje', 'Porcentaje' %>
+        <%= f.text_field 'porcentaje'%>
+    </div>
+
+    <div class="field">
+        <%= f.submit 'Enviar'%>
+    </div>
+<% end %>
